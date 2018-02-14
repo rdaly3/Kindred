@@ -12,9 +12,13 @@
 		C35424332033669E0058415B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35424312033669E0058415B /* Main.storyboard */; };
 		C35424352033669E0058415B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35424342033669E0058415B /* Assets.xcassets */; };
 		C35424382033669E0058415B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35424362033669E0058415B /* LaunchScreen.storyboard */; };
+		C35AE84D203379850080E5AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C35AE84C203379850080E5AB /* GoogleService-Info.plist */; };
+		F7FC50E34C32E9D31325E5EA /* Pods_Kindred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E8A684567BF84B5D39D71 /* Pods_Kindred.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4161B8799460D18664A635E1 /* Pods-Kindred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kindred.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kindred/Pods-Kindred.release.xcconfig"; sourceTree = "<group>"; };
+		88086CF17D9D9F3A51829BD3 /* Pods-Kindred.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kindred.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kindred/Pods-Kindred.debug.xcconfig"; sourceTree = "<group>"; };
 		C354242A2033669E0058415B /* Kindred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kindred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C354242D2033669E0058415B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C354242F2033669E0058415B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		C35424342033669E0058415B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C35424372033669E0058415B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C35424392033669F0058415B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35AE84C203379850080E5AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE5E8A684567BF84B5D39D71 /* Pods_Kindred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kindred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FC50E34C32E9D31325E5EA /* Pods_Kindred.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0EE9567BA9903CC22F27412 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E8A684567BF84B5D39D71 /* Pods_Kindred.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C35424212033669E0058415B = {
 			isa = PBXGroup;
 			children = (
 				C354242C2033669E0058415B /* Kindred */,
 				C354242B2033669E0058415B /* Products */,
+				ED393E96FB76510CBC4C42A9 /* Pods */,
+				A0EE9567BA9903CC22F27412 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,9 +76,19 @@
 				C35424312033669E0058415B /* Main.storyboard */,
 				C35424342033669E0058415B /* Assets.xcassets */,
 				C35424362033669E0058415B /* LaunchScreen.storyboard */,
+				C35AE84C203379850080E5AB /* GoogleService-Info.plist */,
 				C35424392033669F0058415B /* Info.plist */,
 			);
 			path = Kindred;
+			sourceTree = "<group>";
+		};
+		ED393E96FB76510CBC4C42A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88086CF17D9D9F3A51829BD3 /* Pods-Kindred.debug.xcconfig */,
+				4161B8799460D18664A635E1 /* Pods-Kindred.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C354243C2033669F0058415B /* Build configuration list for PBXNativeTarget "Kindred" */;
 			buildPhases = (
+				F351E4267BD585AEEE8DA574 /* [CP] Check Pods Manifest.lock */,
 				C35424262033669E0058415B /* Sources */,
 				C35424272033669E0058415B /* Frameworks */,
 				C35424282033669E0058415B /* Resources */,
+				16B47CB618AD0251CE5ABCA2 /* [CP] Embed Pods Frameworks */,
+				1410DBC1A47162F405E84D65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,12 +154,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				C35424382033669E0058415B /* LaunchScreen.storyboard in Resources */,
+				C35AE84D203379850080E5AB /* GoogleService-Info.plist in Resources */,
 				C35424352033669E0058415B /* Assets.xcassets in Resources */,
 				C35424332033669E0058415B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1410DBC1A47162F405E84D65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kindred/Pods-Kindred-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16B47CB618AD0251CE5ABCA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kindred/Pods-Kindred-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kindred/Pods-Kindred-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F351E4267BD585AEEE8DA574 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kindred-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C35424262033669E0058415B /* Sources */ = {
@@ -272,6 +367,7 @@
 		};
 		C354243D2033669F0058415B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88086CF17D9D9F3A51829BD3 /* Pods-Kindred.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +382,7 @@
 		};
 		C354243E2033669F0058415B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4161B8799460D18664A635E1 /* Pods-Kindred.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

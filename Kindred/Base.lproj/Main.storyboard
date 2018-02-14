@@ -19,17 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kindredBG" translatesAutoresizingMaskIntoConstraints="NO" id="fWG-AL-gCO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kindredBG" translatesAutoresizingMaskIntoConstraints="NO" id="fWG-AL-gCO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zb-2V-wqu">
-                                <rect key="frame" x="71" y="535" width="232" height="50"/>
+                                <rect key="frame" x="71.5" y="535" width="232" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QXP-yi-j5L"/>
                                     <constraint firstAttribute="width" constant="232" id="YDc-IS-vAU"/>
                                 </constraints>
                                 <state key="normal" image="facebookButton"/>
+                                <connections>
+                                    <action selector="loginFacebookAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QV-VF-Tq7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-2x-4aw">
                                 <rect key="frame" x="71" y="593" width="232" height="54"/>
@@ -39,16 +41,65 @@
                         <constraints>
                             <constraint firstItem="AXG-2x-4aw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="573" id="0rd-Id-Su7"/>
                             <constraint firstItem="0zb-2V-wqu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2pM-r1-c9r"/>
+                            <constraint firstItem="fWG-AL-gCO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9sd-g2-bEh"/>
                             <constraint firstItem="AXG-2x-4aw" firstAttribute="top" secondItem="0zb-2V-wqu" secondAttribute="bottom" constant="8" id="DdA-Eh-OrT"/>
+                            <constraint firstItem="fWG-AL-gCO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LL3-Cy-0qx"/>
+                            <constraint firstItem="fWG-AL-gCO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OMH-ng-S0d"/>
                             <constraint firstItem="AXG-2x-4aw" firstAttribute="top" secondItem="0zb-2V-wqu" secondAttribute="bottom" constant="8" id="lhE-BN-e1n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AXG-2x-4aw" secondAttribute="bottom" constant="20" id="sqz-wC-kMq"/>
+                            <constraint firstItem="fWG-AL-gCO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x6G-g1-Rx2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-295" y="125"/>
+        </scene>
+        <!--City Name-->
+        <scene sceneID="51M-5L-qlY">
+            <objects>
+                <tableViewController id="kC1-g4-nVT" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SQz-Rj-9xg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ySj-a2-nKn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ySj-a2-nKn" id="pHc-PL-zqV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kC1-g4-nVT" id="18l-dz-bjq"/>
+                            <outlet property="delegate" destination="kC1-g4-nVT" id="rtt-0D-8Ad"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="City Name" id="hUM-wb-6lC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwE-9A-Zj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m2n-f6-hGy">
+            <objects>
+                <navigationController id="UJi-Rj-AfW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kIV-VY-Mw0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kC1-g4-nVT" kind="relationship" relationship="rootViewController" id="Y3H-XB-cqg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Luh-AE-Exf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="-660"/>
         </scene>
     </scenes>
     <resources>
