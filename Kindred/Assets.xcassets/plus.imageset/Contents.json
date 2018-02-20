@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "storyblocks-flat-plus-icon-addition-circle-sign-add-circular-button-quick-and-easy-recolorable-shape-isolated-from-background-vector-illustration-a-graphic-element-for-web-internet-design_rMBgTT0oCqb_thumb.jpg",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

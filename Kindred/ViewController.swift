@@ -9,15 +9,25 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GradientLoadingBar
+import SVProgressHUD
 
 class ViewController: UIViewController {
+    
 
+    let gradientLoadingBar = GradientLoadingBar()
+    
+
+    
   
     @IBAction func loginFacebookAction(_ sender: UIButton) {
+        // Show loading bar
+        self.gradientLoadingBar.show()
         
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
             if (error == nil){
+                
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 // if user cancel the login
                 if (result?.isCancelled)!{
@@ -25,11 +35,13 @@ class ViewController: UIViewController {
                 }
                 if(fbloginresult.grantedPermissions.contains("email"))
                 {
+            
                     self.getFBUserData()
                 }
                 
                 
             }
+    
         }
         
     }
@@ -41,9 +53,15 @@ class ViewController: UIViewController {
         // Extend the code sample from 6a. Add Facebook Login to Your Code
         // Add to your viewDidLoad method:
         // sloginButton.readPermissions = [usernam]
+
         
         if FBSDKAccessToken.current() != nil {
-            // User is logged in, do work such as go to next view controller.
+            // Show loading bar
+            self.gradientLoadingBar.show()
+            print("already logged in :)")
+            // Hide loading bar
+            self.gradientLoadingBar.hide()
+            self.performSegue(withIdentifier: "gotoActivities", sender: self)
         }
     }
 
@@ -51,13 +69,25 @@ class ViewController: UIViewController {
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
+                    
+                    // Hide loading bar
+                    self.gradientLoadingBar.hide()
+                    SVProgressHUD.dismiss()
+                    
                     //everything works print the user data
                     print(result)
+                    
+                    
                 }
             })
+            
+          self.performSegue(withIdentifier: "gotoActivities", sender: self)
         }
     }
 
 
 }
+
+
+
 

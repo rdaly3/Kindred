@@ -51,6 +51,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="kC1-g4-nVT" kind="show" identifier="gotoActivities" id="62J-5I-Hc1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,14 +62,19 @@
         <!--City Name-->
         <scene sceneID="51M-5L-qlY">
             <objects>
-                <tableViewController id="kC1-g4-nVT" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="ActivityList" storyboardIdentifier="ActivityList" id="kC1-g4-nVT" customClass="ActivityList" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SQz-Rj-9xg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="WzC-1f-2qF">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ySj-a2-nKn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ySj-a2-nKn" customClass="ActivityCell" customModule="Kindred" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ySj-a2-nKn" id="pHc-PL-zqV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -80,10 +88,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="City Name" id="hUM-wb-6lC"/>
+                    <connections>
+                        <outlet property="tableView" destination="SQz-Rj-9xg" id="KBX-Br-rb1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwE-9A-Zj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="446" y="125"/>
+        </scene>
+        <!--Activity Page-->
+        <scene sceneID="eMo-vc-zl3">
+            <objects>
+                <viewController id="d09-ZV-gNW" customClass="ActivityPage" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wDI-7Q-pOr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wh6-us-vLk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHl-d3-bIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m2n-f6-hGy">
@@ -106,4 +132,7 @@
         <image name="facebookButton" width="335" height="73"/>
         <image name="kindredBG" width="540" height="960"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="62J-5I-Hc1"/>
+    </inferredMetricsTieBreakers>
 </document>

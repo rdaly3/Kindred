@@ -15,6 +15,9 @@
 		C35AE84D203379850080E5AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C35AE84C203379850080E5AB /* GoogleService-Info.plist */; };
 		C35AE84F2033B9BB0080E5AB /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C35AE84E2033B9BB0080E5AB /* ActivityCell.xib */; };
 		C35AE8512033BD510080E5AB /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AE8502033BD510080E5AB /* ActivityCell.swift */; };
+		C35AE8532033BFC50080E5AB /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AE8522033BFC50080E5AB /* ActivityList.swift */; };
+		C35AE8562033DF100080E5AB /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AE8552033DF100080E5AB /* Activity.swift */; };
+		C35AE8582033E21A0080E5AB /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AE8572033E21A0080E5AB /* Member.swift */; };
 		F7FC50E34C32E9D31325E5EA /* Pods_Kindred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E8A684567BF84B5D39D71 /* Pods_Kindred.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		C35AE84C203379850080E5AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C35AE84E2033B9BB0080E5AB /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		C35AE8502033BD510080E5AB /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		C35AE8522033BFC50080E5AB /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
+		C35AE8552033DF100080E5AB /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		C35AE8572033E21A0080E5AB /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		DE5E8A684567BF84B5D39D71 /* Pods_Kindred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kindred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,7 @@
 		C354242C2033669E0058415B /* Kindred */ = {
 			isa = PBXGroup;
 			children = (
+				C35AE8542033DEF40080E5AB /* Data Model */,
 				C354242D2033669E0058415B /* AppDelegate.swift */,
 				C354242F2033669E0058415B /* ViewController.swift */,
 				C35424312033669E0058415B /* Main.storyboard */,
@@ -84,8 +91,18 @@
 				C35424392033669F0058415B /* Info.plist */,
 				C35AE84E2033B9BB0080E5AB /* ActivityCell.xib */,
 				C35AE8502033BD510080E5AB /* ActivityCell.swift */,
+				C35AE8522033BFC50080E5AB /* ActivityList.swift */,
 			);
 			path = Kindred;
+			sourceTree = "<group>";
+		};
+		C35AE8542033DEF40080E5AB /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C35AE8552033DF100080E5AB /* Activity.swift */,
+				C35AE8572033E21A0080E5AB /* Member.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		ED393E96FB76510CBC4C42A9 /* Pods */ = {
@@ -197,6 +214,10 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GradientLoadingBar/GradientLoadingBar.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -206,6 +227,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientLoadingBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35AE8562033DF100080E5AB /* Activity.swift in Sources */,
 				C35424302033669E0058415B /* ViewController.swift in Sources */,
+				C35AE8582033E21A0080E5AB /* Member.swift in Sources */,
 				C35AE8512033BD510080E5AB /* ActivityCell.swift in Sources */,
+				C35AE8532033BFC50080E5AB /* ActivityList.swift in Sources */,
 				C354242E2033669E0058415B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
