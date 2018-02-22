@@ -10,6 +10,14 @@ import UIKit
 import RealmSwift
 
 
+class ActivityViewCell: UITableViewCell {
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var activityName: UILabel!
+    @IBOutlet weak var creatorName: UILabel!
+}
+
+
 class MainList: UITableViewController {
 
     let realm = try! Realm()
@@ -20,12 +28,14 @@ class MainList: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
+        
         
         loadactivities()
         
         tableView.separatorStyle = .none
-        tableView.rowHeight = 80.0        
+        tableView.rowHeight = 260.0
+        // tableView.rowHeight = UITableViewAutomaticDimension
+       // tableView.estimatedRowHeight = 240
       
     }
     //MARK: - TableView Datasource Methods
@@ -36,9 +46,10 @@ class MainList: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! ActivityViewCell
         
-        cell.textLabel?.text = activities?[indexPath.row].name ?? "No Activities Added Yet"
+        cell.activityName?.text = "This is an activity."
+        cell.textLabel?.isHidden = true
         
         return cell
     }

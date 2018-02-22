@@ -6,9 +6,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Kindred-->
         <scene sceneID="ujM-6d-PDP">
@@ -19,13 +28,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" id="xBF-fv-lXf">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActivityCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="239" id="xBF-fv-lXf" customClass="ActivityViewCell" customModule="Kindred" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="239"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xBF-fv-lXf" id="Wgk-8v-UOv" customClass="ActivityCell" customModule="Kindred" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xBF-fv-lXf" id="Wgk-8v-UOv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellbody" translatesAutoresizingMaskIntoConstraints="NO" id="F9p-tb-y9R">
+                                            <rect key="frame" x="-49.5" y="74" width="474" height="265"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tacoBell" translatesAutoresizingMaskIntoConstraints="NO" id="Wuu-FZ-vFV">
+                                            <rect key="frame" x="-27.5" y="0.0" width="429" height="149"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="429" id="0UM-J1-ysy"/>
+                                                <constraint firstAttribute="height" constant="149" id="bme-ro-n0f"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-cG-gRT">
+                                            <rect key="frame" x="129" y="163" width="100" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sarah" translatesAutoresizingMaskIntoConstraints="NO" id="12L-Gg-QJd">
+                                            <rect key="frame" x="40" y="157" width="63" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="63" id="FpH-6L-OCS"/>
+                                                <constraint firstAttribute="height" constant="65" id="jTE-4Y-HXW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creator Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-i6-8Yj">
+                                            <rect key="frame" x="129" y="197" width="119" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Wuu-FZ-vFV" firstAttribute="centerX" secondItem="Wgk-8v-UOv" secondAttribute="centerX" id="8YU-Sk-de9"/>
+                                        <constraint firstItem="F9p-tb-y9R" firstAttribute="leading" secondItem="Wgk-8v-UOv" secondAttribute="leading" constant="-49.5" id="MmQ-XU-RVm"/>
+                                        <constraint firstItem="Wuu-FZ-vFV" firstAttribute="top" secondItem="Wgk-8v-UOv" secondAttribute="top" id="Sd4-eb-QAQ"/>
+                                        <constraint firstItem="F9p-tb-y9R" firstAttribute="centerX" secondItem="Wgk-8v-UOv" secondAttribute="centerX" id="Tk9-FK-y3m"/>
+                                        <constraint firstItem="12L-Gg-QJd" firstAttribute="leading" secondItem="Wgk-8v-UOv" secondAttribute="leadingMargin" constant="24" id="Xm3-5q-czF"/>
+                                        <constraint firstItem="ofv-cG-gRT" firstAttribute="top" secondItem="Wuu-FZ-vFV" secondAttribute="bottom" constant="14" id="ZLd-nv-bgs"/>
+                                        <constraint firstItem="12L-Gg-QJd" firstAttribute="top" secondItem="Wuu-FZ-vFV" secondAttribute="bottom" constant="8" id="eru-hK-VOi"/>
+                                        <constraint firstItem="fVp-i6-8Yj" firstAttribute="leading" secondItem="12L-Gg-QJd" secondAttribute="trailing" constant="26" id="fNq-qZ-Gy0"/>
+                                        <constraint firstItem="F9p-tb-y9R" firstAttribute="top" secondItem="Wgk-8v-UOv" secondAttribute="top" constant="74" id="fyy-vP-0I9"/>
+                                        <constraint firstItem="ofv-cG-gRT" firstAttribute="leading" secondItem="12L-Gg-QJd" secondAttribute="trailing" constant="26" id="hZ1-ZT-KVI"/>
+                                        <constraint firstAttribute="trailing" secondItem="F9p-tb-y9R" secondAttribute="trailing" constant="-49.5" id="uQP-lg-Yez"/>
+                                        <constraint firstItem="fVp-i6-8Yj" firstAttribute="top" secondItem="ofv-cG-gRT" secondAttribute="bottom" constant="10.5" id="w5k-cO-IMk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityName" destination="ofv-cG-gRT" id="cbX-vQ-bbg"/>
+                                    <outlet property="creatorName" destination="fVp-i6-8Yj" id="FQc-bp-onZ"/>
+                                    <outlet property="mainImage" destination="Wuu-FZ-vFV" id="FEb-Xz-Dkp"/>
+                                    <outlet property="profilePic" destination="12L-Gg-QJd" id="XJN-sI-rG1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpc-D5-PyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="-8"/>
+            <point key="canvasLocation" x="303.19999999999999" y="-8.5457271364317844"/>
         </scene>
         <!--SignUP-->
         <scene sceneID="sKx-7o-1Zm">
@@ -109,7 +169,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cellbody" width="474" height="265"/>
         <image name="facebookButton" width="335" height="73"/>
         <image name="kindredBG" width="540" height="960"/>
+        <image name="sarah" width="56" height="56"/>
+        <image name="tacoBell" width="429" height="214"/>
     </resources>
 </document>
